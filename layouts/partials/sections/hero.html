@@ -1,0 +1,38 @@
+<section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img 
+            src="/images/hero.jpg"
+            alt="{{ .Params.hero_alt | default "Feldenkrais Method" }}"
+            class="w-full h-full object-cover">
+        <!-- Dark overlay for text readability -->
+        <div class="absolute inset-0 bg-felden-green/60"></div>
+    </div>
+    
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            {{ .Params.headline }}
+        </h1>
+        
+        {{ with .Params.subheadline }}
+        <p class="text-xl md:text-2xl mb-10 max-w-3xl mx-auto leading-relaxed opacity-90">
+            {{ . }}
+        </p>
+        {{ end }}
+        
+        {{ with .Params.cta_text }}
+        <a href="#services" 
+           class="inline-block bg-felden-terra hover:bg-felden-terra/90 text-white font-semibold py-4 px-10 rounded-full text-lg transition-all duration-300 hover:scale-105">
+            {{ . }}
+        </a>
+        {{ end }}
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+        <svg class="w-8 h-8 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+    </div>
+</section>

@@ -1,0 +1,87 @@
+<!-- Header with Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
+  <nav class="container mx-auto px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="{{ .Site.Home.RelPermalink }}" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 bg-felden-green rounded-full flex items-center justify-center group-hover:bg-felden-terra transition-colors">
+          <span class="text-white font-heading font-bold text-lg">F</span>
+        </div>
+        <span class="font-heading text-xl font-semibold text-felden-dark hidden sm:block">
+          {{ if eq .Lang "zh-HK" }}費登奎斯香港{{ else }}Feldenkrais HK{{ end }}
+        </span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}" class="text-felden-dark/80 hover:text-felden-green font-medium transition-colors relative group">
+          {{ .Name }}
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-felden-green transition-all group-hover:w-full"></span>
+        </a>
+        {{ end }}
+        
+        <!-- Language Switcher -->
+        {{ partial "language-switcher.html" . }}
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden p-2 text-felden-dark" id="mobile-menu-btn" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div class="md:hidden hidden mt-4 pb-4 border-t border-felden-sand" id="mobile-menu">
+      <div class="flex flex-col gap-4 pt-4">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}" class="text-felden-dark/80 hover:text-felden-green font-medium transition-colors">
+          {{ .Name }}
+        </a>
+        {{ end }}
+        
+        <div class="pt-4 border-t border-felden-sand">
+          {{ partial "language-switcher.html" . }}
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Spacer for fixed header -->
+<div class="h-20"></div>
+
+<script>
+  // Header scroll effect
+  const header = document.getElementById('main-header');
+  let lastScroll = 0;
+  
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 50) {
+      header.classList.add('bg-felden-bg/95', 'backdrop-blur-md', 'shadow-sm');
+    } else {
+      header.classList.remove('bg-felden-bg/95', 'backdrop-blur-md', 'shadow-sm');
+    }
+    
+    lastScroll = currentScroll;
+  });
+  
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+  
+  // Close mobile menu on link click
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+</script>

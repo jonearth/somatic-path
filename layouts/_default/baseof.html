@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="{{ .Lang }}" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Fonts based on language -->
+  {{ if eq .Lang "zh-HK" }}
+  <!-- Chinese fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+  {{ else }}
+  <!-- English fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  {{ end }}
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'felden-green': '#4A5D54',
+            'felden-sand': '#D6CFC1',
+            'felden-terra': '#C47F68',
+            'felden-bg': '#F9F8F6',
+            'felden-dark': '#2C3E36',
+            'felden-light': '#E8E4DE'
+          },
+          fontFamily: {
+            {{ if eq .Lang "zh-HK" }}
+            'serif': ['"Noto Serif TC"', 'serif'],
+            'sans': ['"Noto Sans TC"', 'sans-serif'],
+            {{ else }}
+            'serif': ['"Playfair Display"', 'serif'],
+            'sans': ['"Lato"', 'sans-serif'],
+            {{ end }}
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Styles -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      {{ if eq .Lang "zh-HK" }}
+      font-family: 'Noto Sans TC', sans-serif;
+      {{ else }}
+      font-family: 'Lato', sans-serif;
+      {{ end }}
+    }
+    
+    .font-heading {
+      {{ if eq .Lang "zh-HK" }}
+      font-family: 'Noto Serif TC', serif;
+      {{ else }}
+      font-family: 'Playfair Display', serif;
+      {{ end }}
+    }
+    
+    /* Smooth animations */
+    .fade-in {
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Section transitions */
+    section {
+      transition: all 0.3s ease;
+    }
+    
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #F9F8F6;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: #4A5D54;
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3A4D44;
+    }
+  </style>
+  
+  {{ block "head" . }}{{ end }}
+</head>
+<body class="bg-felden-bg text-felden-dark antialiased">
+  
+  {{ partial "header.html" . }}
+  
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  
+  {{ partial "footer.html" . }}
+  
+  <!-- Scripts -->
+  <script src="/js/main.js"></script>
+  
+  {{ block "scripts" . }}{{ end }}
+</body>
+</html>

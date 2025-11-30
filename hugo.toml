@@ -1,0 +1,95 @@
+baseURL = 'https://your-domain.com/'
+languageCode = 'en-us'
+title = 'The Feldenkrais Ambassador'
+defaultContentLanguage = 'zh-HK'
+defaultContentLanguageInSubdir = true
+
+# We are building custom layouts, no external theme
+theme = []
+
+[languages]
+  [languages.en]
+    languageName = 'English'
+    weight = 2
+    contentDir = 'content/en'
+    title = 'Feldenkrais Hong Kong | Move Through Life with Ease'
+    [languages.en.params]
+      description = 'Awareness Through Movement® classes in Hong Kong. Unlock your potential through the Feldenkrais Method.'
+
+  [languages.zh-HK]
+    languageName = '繁體中文'
+    weight = 1
+    contentDir = 'content/zh-HK'
+    title = '香港費登奎斯 | 重拾身體的學習本能'
+    [languages.zh-HK.params]
+      description = '香港費登奎斯「動中覺察」課程。透過費登奎斯方法解鎖你的潛能。'
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.110.0"
+
+[params]
+  author = 'Yvonne'
+  email = 'contact@feldenkrais-hk.com'
+  phone = '+852 XXXX XXXX'
+  instagram = 'https://instagram.com/'
+  facebook = 'https://facebook.com/'
+  whatsapp = 'https://wa.me/'
+
+# Menu structure for navigation anchors - English
+[[languages.en.menu.main]]
+  name = "Method"
+  url = "#method"
+  weight = 10
+
+[[languages.en.menu.main]]
+  name = "Benefits"
+  url = "#benefits"
+  weight = 20
+
+[[languages.en.menu.main]]
+  name = "About"
+  url = "#teacher"
+  weight = 30
+
+[[languages.en.menu.main]]
+  name = "Classes"
+  url = "#services"
+  weight = 40
+
+[[languages.en.menu.main]]
+  name = "Contact"
+  url = "#contact"
+  weight = 50
+
+# Menu structure for navigation anchors - Chinese
+[[languages.zh-HK.menu.main]]
+  name = "方法"
+  url = "#method"
+  weight = 10
+
+[[languages.zh-HK.menu.main]]
+  name = "益處"
+  url = "#benefits"
+  weight = 20
+
+[[languages.zh-HK.menu.main]]
+  name = "導師"
+  url = "#teacher"
+  weight = 30
+
+[[languages.zh-HK.menu.main]]
+  name = "課程"
+  url = "#services"
+  weight = 40
+
+[[languages.zh-HK.menu.main]]
+  name = "聯絡"
+  url = "#contact"
+  weight = 50
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

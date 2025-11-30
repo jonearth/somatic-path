@@ -1,0 +1,15 @@
+<!-- Language Switcher -->
+<div class="flex items-center gap-2">
+  {{ range .Site.Languages }}
+    {{ if eq $.Lang .Lang }}
+    <span class="px-3 py-1.5 bg-felden-green text-white text-sm font-medium rounded-full">
+      {{ .LanguageName }}
+    </span>
+    {{ else }}
+    <a href="{{ .Lang | relLangURL }}" 
+       class="px-3 py-1.5 bg-felden-sand/50 hover:bg-felden-sand text-felden-dark text-sm font-medium rounded-full transition-colors">
+      {{ .LanguageName }}
+    </a>
+    {{ end }}
+  {{ end }}
+</div>

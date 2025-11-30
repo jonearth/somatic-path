@@ -1,0 +1,19 @@
+# Hugo generated files
+public/
+resources/_gen/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node (if using npm for Tailwind later)
+node_modules/
+
+# Hugo lock file
+.hugo_build.lock
