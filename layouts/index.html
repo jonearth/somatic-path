@@ -81,6 +81,119 @@
       </div>
     </section>
     
+    {{/* Audience Section - "The Gentle Invitation" */}}
+    {{ else if eq $sectionType "audience" }}
+    <section id="audience" class="py-20 md:py-32 bg-felden-bg">
+      <div class="container mx-auto px-6">
+        {{/* Centered headline with Serif font */}}
+        <h2 class="font-heading text-3xl md:text-5xl font-bold mb-6 text-center text-felden-dark">
+          {{ .Params.headline }}
+        </h2>
+        
+        {{/* Optional subtitle */}}
+        {{ if .Params.subtitle }}
+        <p class="text-lg md:text-xl text-felden-dark/70 text-center max-w-2xl mx-auto mb-16">
+          {{ .Params.subtitle }}
+        </p>
+        {{ else }}
+        <div class="mb-10"></div>
+        {{ end }}
+        
+        {{/* 3+2 Inverted Pyramid Layout */}}
+        <div class="max-w-5xl mx-auto mb-16">
+          {{/* First row: 3 cards */}}
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
+            {{ range first 3 .Params.audiences }}
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+              <div class="w-16 h-16 mx-auto mb-4 bg-felden-green/10 rounded-full flex items-center justify-center">
+                {{ if eq .icon "briefcase" }}
+                <svg class="w-8 h-8 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                {{ else if eq .icon "body" }}
+                <svg class="w-8 h-8 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+                {{ else if eq .icon "heart" }}
+                <svg class="w-8 h-8 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+                {{ else if eq .icon "music" }}
+                <svg class="w-8 h-8 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                </svg>
+                {{ else if eq .icon "mind" }}
+                <svg class="w-8 h-8 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+                {{ else }}
+                <svg class="w-8 h-8 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {{ end }}
+              </div>
+              <span class="text-lg font-medium text-felden-dark">{{ .title }}</span>
+            </div>
+            {{ end }}
+          </div>
+          
+          {{/* Second row: 2 cards centered */}}
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto">
+            {{ range after 3 .Params.audiences }}
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center">
+              <div class="w-16 h-16 mx-auto mb-4 bg-felden-green/10 rounded-full flex items-center justify-center">
+                {{ if eq .icon "briefcase" }}
+                <svg class="w-8 h-8 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                {{ else if eq .icon "body" }}
+                <svg class="w-8 h-8 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                </svg>
+                {{ else if eq .icon "heart" }}
+                <svg class="w-8 h-8 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+                {{ else if eq .icon "music" }}
+                <svg class="w-8 h-8 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                </svg>
+                {{ else if eq .icon "mind" }}
+                <svg class="w-8 h-8 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                </svg>
+                {{ else }}
+                <svg class="w-8 h-8 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"></path>
+                </svg>
+                {{ end }}
+              </div>
+              <span class="text-lg font-medium text-felden-dark">{{ .title }}</span>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        
+        {{/* Footer quote - breathing space */}}
+        {{ if or .Params.footer_line1 .Params.footer_text }}
+        <div class="text-center max-w-2xl mx-auto pt-8">
+          {{ if .Params.footer_line1 }}
+          <p class="text-xl md:text-2xl text-felden-dark/90 font-heading leading-relaxed mb-2">
+            {{ .Params.footer_line1 }}
+          </p>
+          <p class="text-xl md:text-2xl text-felden-terra font-heading font-semibold">
+            {{ .Params.footer_line2 }}
+          </p>
+          {{ else }}
+          <p class="text-xl md:text-2xl text-felden-dark/80 font-heading italic leading-relaxed">
+            {{ .Params.footer_text }}
+          </p>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </section>
+    
     {{/* Solution / Method Section */}}
     {{ else if eq $sectionType "solution" }}
     <section id="method" class="py-20 md:py-32 bg-felden-bg">
