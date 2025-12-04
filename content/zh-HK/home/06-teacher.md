@@ -9,7 +9,7 @@ titles:
   - "Feldenkrais® 動中覺察導師（ATM Teacher）"
 hero_quote: "改變不是靠更用力，而是靠更覺察、更清晰、更溫柔。"
 hero_intro: "Yvonne 的教學源於她自己的身體旅程。她不是一位高高在上的權威，而是一位走過同樣路途的引路人。"
-image_url: "/images/yvonne.png"
+image_url: "/images/yvonne.jpg"
 
 # Section 2: The Story
 story_heading: "曾與你一樣的掙扎"
@@ -39,15 +39,6 @@ philosophy_flow:
   - "自主"
   - "輕鬆"
   - "Potent Self"
-
-# Section 5: Student Voices
-testimonials_heading: "學生眼中的課堂"
-testimonials:
-  - "好似 reset 咗身體"
-  - "平靜、踏實"
-  - "不辛苦，但痛楚真的減少了"
-  - "默默地令人改變"
-  - "好似搵返真正嘅自己"
 
 # Footer
 footer_tagline: "以溫柔的方式，Powering People Forward。"

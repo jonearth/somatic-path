@@ -9,7 +9,7 @@ titles:
   - "Certified Awareness Through Movement® Teacher"
 hero_quote: "Change doesn't come from pushing harder — it comes from awareness, clarity, and gentleness."
 hero_intro: "Yvonne's work is rooted in her own experience with pain, over-effort, and years of looking outward for solutions. She's not an authority above you — she's a guide who has walked the same path."
-image_url: "/images/yvonne.png"
+image_url: "/images/yvonne.jpg"
 
 # Section 2: The Story
 story_heading: "A Struggle You Might Recognize"
@@ -40,14 +40,6 @@ philosophy_flow:
   - "Ease"
   - "Potent Self"
 
-# Section 5: Student Voices
-testimonials_heading: "What Students Say"
-testimonials:
-  - "like pressing reset"
-  - "calming and grounding"
-  - "pain reducing without struggle"
-  - "quietly life-changing"
-  - "I feel like myself again"
 
 # Footer
 footer_tagline: "Gently Powering People Forward."

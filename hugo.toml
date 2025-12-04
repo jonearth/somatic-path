@@ -32,10 +32,10 @@ theme = []
 [params]
   author = 'Yvonne'
   email = 'enquiry@somatic-path.com'
-  phone = '+852 XXXX XXXX'
-  instagram = 'https://instagram.com/'
+  phone = '+852 9766 4803'
+  instagram = 'https://www.instagram.com/somatic_path/'
   facebook = 'https://facebook.com/'
-  whatsapp = 'https://wa.me/'
+  whatsapp = 'https://wa.me/85297664803'
 
 # Menu structure for navigation anchors - English
 [[languages.en.menu.main]]
