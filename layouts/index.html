@@ -194,6 +194,101 @@
       </div>
     </section>
     
+    {{/* Experience Section - "The Breathing Space" */}}
+    {{ else if eq $sectionType "experience" }}
+    <section id="experience" class="py-20 md:py-32 bg-felden-sand/20">
+      <div class="container mx-auto px-6">
+        
+        {{/* Part I: The Invitation (Header) */}}
+        <div class="text-center mb-16 md:mb-20">
+          <h2 class="font-heading text-3xl md:text-5xl font-bold mb-4 text-felden-dark">
+            {{ .Params.headline }}
+          </h2>
+          {{ if .Params.subtitle }}
+          <p class="text-lg md:text-xl text-felden-green/70">
+            {{ .Params.subtitle }}
+          </p>
+          {{ end }}
+        </div>
+        
+        {{/* Part II: The Core Experience (Two-Column Layout) */}}
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto mb-16 md:mb-20">
+          
+          {{/* Left Column: The Narrative */}}
+          <div class="space-y-6">
+            <h3 class="font-heading text-2xl font-semibold text-felden-dark">
+              {{ .Params.left_heading }}
+            </h3>
+            <p class="text-felden-dark/80 leading-relaxed text-lg">
+              {{ .Params.left_body }}
+            </p>
+            {{/* System Upgrade Highlight Box */}}
+            {{ if .Params.left_highlight }}
+            <div class="border-l-4 border-felden-green bg-felden-green/5 pl-6 py-4 rounded-r-lg">
+              <p class="text-felden-dark font-medium leading-relaxed italic">
+                {{ .Params.left_highlight }}
+              </p>
+            </div>
+            {{ end }}
+          </div>
+          
+          {{/* Right Column: The Benefits */}}
+          <div class="space-y-8">
+            {{/* List 1: Experience */}}
+            {{ if .Params.right_list1 }}
+            <div>
+              <h4 class="text-sm uppercase tracking-wider font-semibold text-felden-green mb-4">
+                {{ .Params.right_list1_heading }}
+              </h4>
+              <ul class="space-y-3">
+                {{ range .Params.right_list1 }}
+                <li class="flex items-start gap-3">
+                  <span class="text-felden-green mt-0.5">✦</span>
+                  <span class="text-felden-dark/80">{{ . }}</span>
+                </li>
+                {{ end }}
+              </ul>
+            </div>
+            {{ end }}
+            
+            {{/* List 2: Feelings */}}
+            {{ if .Params.right_list2 }}
+            <div>
+              <h4 class="text-sm uppercase tracking-wider font-semibold text-felden-green mb-4">
+                {{ .Params.right_list2_heading }}
+              </h4>
+              <ul class="space-y-3">
+                {{ range .Params.right_list2 }}
+                <li class="flex items-start gap-3">
+                  <span class="text-felden-terra mt-0.5">✓</span>
+                  {{ if reflect.IsMap . }}
+                  <span class="text-felden-dark/80 {{ if .bold }}font-semibold text-felden-dark{{ end }}">{{ .text }}</span>
+                  {{ else }}
+                  <span class="text-felden-dark/80">{{ . }}</span>
+                  {{ end }}
+                </li>
+                {{ end }}
+              </ul>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        
+        {{/* Part III: The Takeaway (Footer) */}}
+        {{ if .Params.footer_line1 }}
+        <div class="text-center max-w-2xl mx-auto pt-8 border-t border-felden-dark/10">
+          <p class="font-heading text-xl md:text-2xl text-felden-dark/90 leading-relaxed mb-2">
+            {{ .Params.footer_line1 }}
+          </p>
+          <p class="font-heading text-xl md:text-2xl text-felden-dark font-semibold">
+            <span class="border-b-2 border-felden-terra/50 pb-1">{{ .Params.footer_line2 }}</span>
+          </p>
+        </div>
+        {{ end }}
+        
+      </div>
+    </section>
+    
     {{/* Solution / Method Section */}}
     {{ else if eq $sectionType "solution" }}
     <section id="method" class="py-20 md:py-32 bg-felden-bg">
@@ -286,6 +381,170 @@
       </div>
     </section>
     
+    {{/* Teacher Bio Section - "The Guide's Journey" */}}
+    {{ else if eq $sectionType "teacher-bio" }}
+    <section id="teacher" class="py-20 md:py-32 bg-white">
+      <div class="container mx-auto px-6">
+        
+        {{/* Section 1: Hero Introduction */}}
+        <div class="max-w-6xl mx-auto mb-20">
+          <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {{/* Left: Photo */}}
+            <div class="order-2 md:order-1">
+              <div class="relative max-w-md mx-auto">
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                  {{ if .Params.image_url }}
+                  <img src="{{ .Params.image_url }}" alt="{{ .Params.name }}" class="w-full h-full object-cover">
+                  {{ else }}
+                  <div class="w-full h-full bg-felden-sand flex items-center justify-center">
+                    <svg class="w-32 h-32 text-felden-green/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                    </svg>
+                  </div>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+            {{/* Right: Name & Titles */}}
+            <div class="order-1 md:order-2 text-center md:text-left">
+              <h2 class="font-heading text-4xl md:text-5xl font-bold mb-4 text-felden-dark">
+                {{ .Params.name }}
+              </h2>
+              <div class="space-y-1 mb-6">
+                {{ range .Params.titles }}
+                <p class="text-felden-green font-medium">{{ . }}</p>
+                {{ end }}
+              </div>
+              {{ if .Params.hero_quote }}
+              <blockquote class="text-xl md:text-2xl font-heading italic text-felden-dark/80 mb-6 border-l-4 border-felden-terra pl-4">
+                {{ .Params.hero_quote }}
+              </blockquote>
+              {{ end }}
+              <p class="text-lg text-felden-dark/70 leading-relaxed">
+                {{ .Params.hero_intro }}
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        {{/* Section 2: The Story */}}
+        <div class="max-w-3xl mx-auto mb-20">
+          {{/* Part 1: The Struggle */}}
+          <div class="mb-12">
+            <h3 class="font-heading text-2xl md:text-3xl font-semibold text-felden-dark mb-6">
+              {{ .Params.story_heading }}
+            </h3>
+            <p class="text-lg text-felden-dark/80 leading-relaxed">
+              {{ .Params.story_body }}
+            </p>
+          </div>
+          
+          {{/* Part 2: The Turning Point */}}
+          <div>
+            <h3 class="font-heading text-2xl md:text-3xl font-semibold text-felden-dark mb-6">
+              {{ .Params.turning_point_heading }}
+            </h3>
+            <p class="text-lg text-felden-dark/80 leading-relaxed mb-6">
+              {{ .Params.turning_point_intro }}
+            </p>
+            {{ if .Params.turning_point_list }}
+            <ul class="space-y-3 pl-2">
+              {{ range .Params.turning_point_list }}
+              <li class="flex items-center gap-3">
+                <span class="w-2 h-2 bg-felden-terra rounded-full flex-shrink-0"></span>
+                <span class="text-felden-dark/80 text-lg">{{ . }}</span>
+              </li>
+              {{ end }}
+            </ul>
+            {{ end }}
+          </div>
+        </div>
+        
+        {{/* Section 3: Mission & Qualifications - Highlight Box */}}
+        <div class="max-w-4xl mx-auto mb-20">
+          <div class="bg-felden-green/5 border border-felden-green/20 rounded-2xl p-8 md:p-12">
+            <h3 class="font-heading text-2xl md:text-3xl font-semibold text-felden-dark mb-6">
+              {{ .Params.mission_heading }}
+            </h3>
+            <p class="text-lg text-felden-dark/80 leading-relaxed mb-6">
+              {{ .Params.mission_body }}
+            </p>
+            {{ if .Params.mission_highlight }}
+            <p class="text-lg text-felden-dark font-medium leading-relaxed mb-6 pl-4 border-l-4 border-felden-green">
+              {{ .Params.mission_highlight }}
+            </p>
+            {{ end }}
+            <p class="text-lg text-felden-dark/80 leading-relaxed">
+              {{ .Params.mission_wish }}
+            </p>
+          </div>
+        </div>
+        
+        {{/* Section 4: Teaching Philosophy */}}
+        <div class="max-w-3xl mx-auto mb-20">
+          <h3 class="font-heading text-2xl md:text-3xl font-semibold text-felden-dark mb-8 text-center">
+            {{ .Params.philosophy_heading }}
+          </h3>
+          
+          {{/* Quote Card */}}
+          {{ if .Params.philosophy_quote }}
+          <div class="bg-white rounded-2xl p-8 shadow-lg mb-8 text-center">
+            <svg class="w-10 h-10 text-felden-terra/30 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+            </svg>
+            <p class="text-xl md:text-2xl font-heading italic text-felden-dark">
+              {{ .Params.philosophy_quote }}
+            </p>
+          </div>
+          {{ end }}
+          
+          <p class="text-lg text-felden-dark/80 leading-relaxed text-center mb-8">
+            {{ .Params.philosophy_body }}
+          </p>
+          
+          {{/* Philosophy Flow */}}
+          {{ if .Params.philosophy_flow }}
+          <div class="flex flex-wrap justify-center items-center gap-2 md:gap-4">
+            {{ range $i, $step := .Params.philosophy_flow }}
+            {{ if $i }}<span class="text-felden-green">→</span>{{ end }}
+            <span class="px-4 py-2 bg-felden-sand/50 rounded-full text-felden-dark font-medium">{{ $step }}</span>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+        
+        {{/* Section 5: Student Voices */}}
+        {{ if .Params.testimonials }}
+        <div class="max-w-4xl mx-auto mb-16">
+          <h3 class="font-heading text-2xl md:text-3xl font-semibold text-felden-dark mb-10 text-center">
+            {{ .Params.testimonials_heading }}
+          </h3>
+          
+          {{/* Speech Bubbles Grid */}}
+          <div class="flex flex-wrap justify-center gap-4">
+            {{ range .Params.testimonials }}
+            <div class="bg-white rounded-2xl px-6 py-4 shadow-md hover:shadow-lg transition-shadow relative">
+              <p class="text-felden-dark/80 italic">"{{ . }}"</p>
+              {{/* Speech bubble tail */}}
+              <div class="absolute -bottom-2 left-8 w-4 h-4 bg-white transform rotate-45"></div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+        
+        {{/* Footer Tagline */}}
+        {{ if .Params.footer_tagline }}
+        <div class="text-center pt-8 border-t border-felden-dark/10 max-w-2xl mx-auto">
+          <p class="font-heading text-xl md:text-2xl text-felden-dark font-medium">
+            {{ .Params.footer_tagline }}
+          </p>
+        </div>
+        {{ end }}
+        
+      </div>
+    </section>
+    
     {{/* Teacher Section */}}
     {{ else if eq $sectionType "teacher" }}
     <section id="teacher" class="py-20 md:py-32 bg-felden-green text-white">
@@ -318,6 +577,71 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+    
+    {{/* Services Cards Section - "The Offerings" */}}
+    {{ else if eq $sectionType "services-cards" }}
+    <section id="services" class="py-20 md:py-32 bg-felden-sand/20">
+      <div class="container mx-auto px-6">
+        <h2 class="font-heading text-3xl md:text-5xl font-bold mb-16 text-center text-felden-dark">
+          {{ .Params.headline }}
+        </h2>
+        
+        {{/* 3-Column Cards Grid */}}
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+          {{ range .Params.services }}
+          <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all flex flex-col h-full">
+            {{/* Icon */}}
+            <div class="w-14 h-14 bg-felden-green/10 rounded-xl flex items-center justify-center mb-6">
+              {{ if eq .icon "group" }}
+              <svg class="w-7 h-7 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+              {{ else if eq .icon "building" }}
+              <svg class="w-7 h-7 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+              </svg>
+              {{ else if eq .icon "sparkles" }}
+              <svg class="w-7 h-7 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+              </svg>
+              {{ else }}
+              <svg class="w-7 h-7 text-felden-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              {{ end }}
+            </div>
+            
+            {{/* Title */}}
+            <h3 class="font-heading text-xl font-bold mb-3 text-felden-dark">{{ .title }}</h3>
+            
+            {{/* Description */}}
+            <p class="text-felden-dark/70 leading-relaxed mb-6 flex-grow">{{ .description }}</p>
+            
+            {{/* Tags (Pill Style) */}}
+            {{ if .tags }}
+            <div class="flex flex-wrap gap-2 mt-auto">
+              {{ range .tags }}
+              <span class="px-3 py-1 bg-felden-green/10 text-felden-green text-sm font-medium rounded-full">{{ . }}</span>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+        
+        {{/* CTA Button */}}
+        {{ if .Params.cta_text }}
+        <div class="text-center">
+          <a href="{{ .Params.cta_url | default "#contact" }}" class="inline-flex items-center gap-2 px-8 py-4 bg-felden-green text-white font-semibold rounded-full hover:bg-felden-dark transition-colors shadow-lg hover:shadow-xl">
+            {{ .Params.cta_text }}
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
+        {{ end }}
       </div>
     </section>
     

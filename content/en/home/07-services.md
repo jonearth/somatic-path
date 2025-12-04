@@ -1,17 +1,26 @@
 ---
-type: "services"
-headline: "Join the Movement"
+type: "services-cards"
+headline: "Classes & Workshops"
+
 services:
-  - title: "Awareness Through Movement® (ATM) Classes"
-    description: "Lie down, listen, and move. A process of discovery that is calming and beneficial. Perfect for those new to the method or looking to deepen their practice."
-    features:
-      - "Group Learning: Small class sizes for personalized attention"
-      - "Self-Organized Groups: Invite Yvonne to teach a private series tailored to your needs"
-      - "Regular weekly sessions available"
-  - title: "Corporate Wellness"
-    description: "Stress is expensive. Bring resilience to your workplace. Help your team reduce tension, improve focus, and move through the workday with ease."
-    features:
-      - "Tailored workshops for your organization"
-      - "Desk-friendly movement sequences"
-      - "Stress management and productivity enhancement"
+  - title: "Group ATM Classes"
+    icon: "group"
+    description: "Gentle guided lessons. Small groups for personal attention."
+    
+  - title: "Corporate Well-Being"
+    icon: "building"
+    description: "Shift teams from stress mode → flow mode. Reduce tension; improve clarity and productivity."
+    
+  - title: "Themed Workshops"
+    icon: "sparkles"
+    description: "Deep dives into specific themes."
+    tags:
+      - "Spine Like a Chain"
+      - "Happy Feet"
+      - "Jaw & Shoulder Reset"
+      - "Pelvis & Balance"
+      - "Breathing with Ease"
+
+cta_text: "Book a Consultation"
+cta_url: "#contact"
 ---

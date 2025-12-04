@@ -1,17 +1,26 @@
 ---
-type: "services"
-headline: "加入我們"
+type: "services-cards"
+headline: "課程與服務"
+
 services:
-  - title: "「動中覺察」小組課程"
-    description: "躺下來，聆聽，然後活動。這是一個平靜而有益的探索過程。適合初學者或希望深化練習的人士。"
-    features:
-      - "小組學習：小班教學，確保個人化關注"
-      - "自組包班：擁有一群志同道合的朋友或同事？邀請 Yvonne 為你們度身訂造專屬課堂"
-      - "定期每週課程"
-  - title: "機構培訓"
-    description: "壓力有價。為你的企業團隊注入韌性。幫助你的團隊減少緊張、提高專注力，輕鬆應對工作中的每一天。"
-    features:
-      - "為你的機構度身訂造工作坊"
-      - "辦公室友善的動作練習"
-      - "壓力管理及提升生產力"
+  - title: "ATM 小組課程"
+    icon: "group"
+    description: "溫和清晰的引導課堂。小班教學，方便照顧每位學員。"
+    
+  - title: "企業身心鬆弛"
+    icon: "building"
+    description: "讓團隊從「壓力模式」回到「流動模式」。改善肩頸緊張、專注力下降等問題。"
+    
+  - title: "主題工作坊"
+    icon: "sparkles"
+    description: "深入探索特定主題的專題工作坊。"
+    tags:
+      - "脊椎如鏈條"
+      - "快樂的雙腳"
+      - "下顎與肩膀釋放"
+      - "骨盆與平衡"
+      - "自在呼吸"
+
+cta_text: "預約諮詢"
+cta_url: "#contact"
 ---
