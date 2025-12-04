@@ -1,6 +1,6 @@
-baseURL = 'https://your-domain.com/'
+baseURL = 'https://somatic-path.com/'
 languageCode = 'en-us'
-title = 'The Feldenkrais Ambassador'
+title = 'Somatic Path'
 defaultContentLanguage = 'zh-HK'
 defaultContentLanguageInSubdir = true
 
@@ -12,7 +12,7 @@ theme = []
     languageName = 'English'
     weight = 2
     contentDir = 'content/en'
-    title = 'Feldenkrais Hong Kong | Move Through Life with Ease'
+    title = 'Somatic Path HK | Move Through Life with Ease'
     [languages.en.params]
       description = 'Awareness Through Movement® classes in Hong Kong. Unlock your potential through the Feldenkrais Method.'
 
@@ -20,7 +20,7 @@ theme = []
     languageName = '繁體中文'
     weight = 1
     contentDir = 'content/zh-HK'
-    title = '香港費登奎斯 | 重拾身體的學習本能'
+    title = 'Somatic Path HK | 重拾身體的學習本能'
     [languages.zh-HK.params]
       description = '香港費登奎斯「動中覺察」課程。透過費登奎斯方法解鎖你的潛能。'
 
@@ -31,7 +31,7 @@ theme = []
 
 [params]
   author = 'Yvonne'
-  email = 'contact@feldenkrais-hk.com'
+  email = 'enquiry@somatic-path.com'
   phone = '+852 XXXX XXXX'
   instagram = 'https://instagram.com/'
   facebook = 'https://facebook.com/'

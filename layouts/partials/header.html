@@ -1,21 +1,19 @@
 <!-- Header with Navigation -->
-<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="main-header">
-  <nav class="container mx-auto px-6 py-4">
+<header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-felden-bg/95 backdrop-blur-md" id="main-header">
+  <nav class="max-w-7xl mx-auto px-6 py-3">
     <div class="flex items-center justify-between">
-      <!-- Logo -->
-      <a href="{{ .Site.Home.RelPermalink }}" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 bg-felden-green rounded-full flex items-center justify-center group-hover:bg-felden-terra transition-colors">
-          <span class="text-white font-heading font-bold text-lg">F</span>
-        </div>
-        <span class="font-heading text-xl font-semibold text-felden-dark hidden sm:block">
-          {{ if eq .Lang "zh-HK" }}費登奎斯香港{{ else }}Feldenkrais HK{{ end }}
+      <!-- Logo (Left) -->
+      <a href="{{ .Site.Home.RelPermalink }}" class="flex items-center gap-2 group flex-shrink-0">
+        <img src="/images/logo.png" alt="Somatic Path" class="h-8 w-auto">
+        <span class="font-heading text-lg font-semibold text-felden-dark hidden sm:block">
+          Somatic Path HK
         </span>
       </a>
       
-      <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center gap-8">
+      <!-- Desktop Navigation (Right) -->
+      <div class="hidden md:flex items-center gap-6">
         {{ range .Site.Menus.main }}
-        <a href="{{ .URL }}" class="text-felden-dark/80 hover:text-felden-green font-medium transition-colors relative group">
+        <a href="{{ .URL }}" class="text-felden-dark/80 hover:text-felden-green font-medium transition-colors relative group text-sm">
           {{ .Name }}
           <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-felden-green transition-all group-hover:w-full"></span>
         </a>

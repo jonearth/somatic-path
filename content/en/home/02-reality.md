@@ -1,14 +1,28 @@
 ---
-type: "reality"
-headline: "Are You \"Holding It Together\" or Falling Apart?"
+type: "process"
+headline: "How the Method Works"
+subtitle: "Awareness → Choice → Autonomy → Ease → Potent Self"
+steps:
+  - number: "1"
+    title: "Awareness"
+    description: "Shift out of autopilot. Sense what is truly happening in your movement."
+    icon: "eye"
+  - number: "2"
+    title: "Choice"
+    description: "Gentle variations create new possibilities. Old habits loosen. New options appear."
+    icon: "path"
+  - number: "3"
+    title: "Autonomy"
+    description: "You regain control of how you sit, stand, walk, breathe and respond."
+    icon: "user"
+  - number: "4"
+    title: "Ease"
+    description: "Effort reduces naturally. The skeleton supports you. Muscles stop overworking. Breathing softens. Coordination improves."
+    icon: "feather"
+  - number: "5"
+    title: "Potent Self"
+    description: "Move with clarity, confidence and integrity — strength through intelligence, not force."
+    icon: "star"
+footer_title: "A Sustainable Change"
+footer_text: "This is not temporary relief. It's a long-term shift you can use every day. A foundation for everything you do."
 ---
-
-Modern life in Hong Kong demands perfection. We push, we stress, and we repeat the same old habits.
-
-**Stiff joints?** You blame age.
-
-**Back pain?** You blame the computer.
-
-**Anxiety?** You blame the job.
-
-But the problem isn't the world—it's how you move through it. We often treat our bodies like machines to be fixed, rather than intelligent systems designed to learn. Ignoring these signs isn't resilience; it's neglect.

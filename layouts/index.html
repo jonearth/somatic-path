@@ -11,7 +11,62 @@
     {{ if eq $sectionType "hero" }}
     {{ partial "sections/hero.html" . }}
     
-    {{/* Reality Check Section */}}
+    {{/* Process Steps Section */}}
+    {{ else if eq $sectionType "process" }}
+    <section id="method" class="py-20 md:py-32 bg-gradient-to-b from-felden-bg to-felden-sand/20">
+      <div class="max-w-7xl mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center mb-16">
+          <h2 class="font-heading text-3xl md:text-5xl font-bold mb-4 text-felden-dark">
+            {{ .Params.headline }}
+          </h2>
+          {{ with .Params.subtitle }}
+          <p class="text-lg md:text-xl text-felden-green font-medium">{{ . }}</p>
+          {{ end }}
+        </div>
+        
+        <!-- Process Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-16">
+          {{ range $index, $step := .Params.steps }}
+          <div class="relative group">
+            <!-- Card -->
+            <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full border-t-4 
+              {{ if eq $index 0 }}border-felden-green{{ end }}
+              {{ if eq $index 1 }}border-teal-500{{ end }}
+              {{ if eq $index 2 }}border-felden-terra{{ end }}
+              {{ if eq $index 3 }}border-amber-500{{ end }}
+              {{ if eq $index 4 }}border-felden-dark{{ end }}
+            ">
+              <!-- Number Badge -->
+              <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 text-white font-bold text-lg
+                {{ if eq $index 0 }}bg-felden-green{{ end }}
+                {{ if eq $index 1 }}bg-teal-500{{ end }}
+                {{ if eq $index 2 }}bg-felden-terra{{ end }}
+                {{ if eq $index 3 }}bg-amber-500{{ end }}
+                {{ if eq $index 4 }}bg-felden-dark{{ end }}
+              ">
+                {{ $step.number }}
+              </div>
+              
+              <!-- Content -->
+              <h3 class="font-heading text-xl font-bold mb-3 text-felden-dark">{{ $step.title }}</h3>
+              <p class="text-felden-dark/70 text-sm leading-relaxed">{{ $step.description }}</p>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+        
+        <!-- Footer Message -->
+        {{ if .Params.footer_title }}
+        <div class="max-w-2xl mx-auto text-center bg-felden-dark rounded-2xl p-8 text-white">
+          <h3 class="font-heading text-2xl font-bold mb-3 text-felden-sand">{{ .Params.footer_title }}</h3>
+          <p class="text-felden-light/90 leading-relaxed">{{ .Params.footer_text }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+    
+    {{/* Reality Check Section (legacy) */}}
     {{ else if eq $sectionType "reality" }}
     <section id="reality" class="py-20 md:py-32 bg-felden-dark text-white">
       <div class="container mx-auto px-6">

@@ -1,14 +1,28 @@
 ---
-type: "reality"
-headline: "你是「頂得住」，還是正在倒下？"
+type: "process"
+headline: "方法如何運作"
+subtitle: "覺察 → 選擇 → 自主 → 輕鬆 → 更有力量的自己"
+steps:
+  - number: "1"
+    title: "覺察"
+    description: "跳出自動導航，看清真正的動作。"
+    icon: "eye"
+  - number: "2"
+    title: "選擇"
+    description: "透過細微變化，神經系統找到更容易的新路徑。"
+    icon: "path"
+  - number: "3"
+    title: "自主"
+    description: "重新掌握坐、站、行、呼吸與反應。"
+    icon: "user"
+  - number: "4"
+    title: "輕鬆"
+    description: "骨骼清晰支撐，肌肉終於可以休息。呼吸變柔和，協調變順暢。"
+    icon: "feather"
+  - number: "5"
+    title: "更有力量的自己"
+    description: "不是靠用力，而是靠清晰與效率。"
+    icon: "star"
+footer_title: "長遠而可持續的改變"
+footer_text: "這不是短暫放鬆，而是每天都能使用的能力，成為支撐你的真正基礎。"
 ---
-
-香港生活講求效率與完美。我們不斷施壓、焦慮，重複著舊有的壞習慣。
-
-**關節僵硬？** 你怪年紀大。
-
-**腰背痛？** 你怪電腦。
-
-**焦慮？** 你怪工作壓力。
-
-但問題不在於世界，而在於你「應對」世界的方式。我們常把身體當成壞了就要修的機器，卻忘記了它是擁有高度智慧、懂得自我修復的系統。忽視身體的警號不是堅強，而是對自己的疏忽。
